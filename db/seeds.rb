@@ -1,7 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+# frozen_string_literal: true
+
+directory = File.dirname(__FILE__)
+file_location = File.join(directory, 'recipes-en.json')
+recipe_list = JSON.parse(File.read(file_location))
+
+recipe_list.each { |recipe| Recipe.create(recipe) }
