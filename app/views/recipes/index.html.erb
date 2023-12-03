@@ -1,0 +1,51 @@
+<div class="p-3 mt-2 mb-4 bg-pink w-100 d-flex" >
+  <div class="container d-flex align-items-center justify-content-between">
+
+    <h3 class="text-warning">Recipe finder</h3>
+    <div class="col-md-4">
+      <%= form_tag(recipes_path, method: :get, class: "d-flex  input-group") do %>
+        <%= text_field_tag :query, params[:query], placeholder: 'milk, eggs, cheese', class: 'form-control rounded bg-secondary border-secondary text-white' %>
+        <%= submit_tag('Search', class: "btn btn-outline-secondary") %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <%if @recipes.blank?%>
+      <h4>No recipes found</h4>
+    <% end%>
+
+    <% @recipes.each do |recipe| %>
+      <div class="col-md-3 d-flex align-items-center flex-column mb-4">
+        <%= link_to(recipe) do %>
+          <%= image_tag(recipe.image, alt: recipe.title, class: "img-thumbnail bg-secondary border-0 rounded-bottom-0", style: "width: 250px; height:250px; ") %>
+        <% end %>
+        <div class="row w-100">
+          <div class="p-3 mb-2 rounded bg-secondary text-white" >
+            <h5 class="text-warning text-center"><%= recipe.title %> </h5>
+            <div class="text-white d-flex">
+              <div class="fw-bold">Cook time:</div>
+              <div><%= recipe.cook_time %> min</div>
+            </div>
+            <div class="text-white d-flex">
+              <div class="fw-bold">Prep time:</div>
+              <div> <%= recipe.prep_time %> min. </div>
+            </div>
+
+            <div class="text-white d-flex w-100 mt-3">
+              <%= link_to(recipe) do %>
+                <div class="d-flex w-100">
+                  <div class="fw-bold text-white">Show recipe</div>
+                  <i class="bi bi-three-dots text-warning mx-2"></i>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%end %>
+  </div>
+
+</div>
