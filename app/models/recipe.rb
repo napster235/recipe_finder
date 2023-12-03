@@ -11,5 +11,5 @@ class Recipe < ApplicationRecord
                     }
                   }
 
-  scope :random_recipes, -> { order('RANDOM()').limit(15) }
+  scope :random_recipes, -> { order('RANDOM()').limit(16) }
 end

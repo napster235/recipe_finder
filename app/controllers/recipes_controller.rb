@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
 
   def get_recipes_by_ingredients(query_param)
     if query_param.present?
-      @recipes = Recipe.search_by_ingredients(params[:query]).limit(15)
+      @recipes = Recipe.search_by_ingredients(params[:query]).limit(16)
     else
       Recipe.random_recipes
     end
