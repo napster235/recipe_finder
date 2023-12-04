@@ -29,4 +29,5 @@ a {
 
 ::placeholder { /* Most modern browsers support this now. */
     color: white !important;
+    font-style: italic;
 }
