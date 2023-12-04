@@ -5,7 +5,11 @@
     <% if show_search_bar %>
       <div class="col-md-4">
         <%= form_tag(recipes_path, method: :get, class: "d-flex  input-group") do %>
-          <%= text_field_tag :query, params[:query], placeholder: 'milk, eggs, cheese', class: 'form-control rounded bg-secondary border-secondary text-white' %>
+          <%= text_field_tag :query,
+                             params[:query],
+                             placeholder: 'milk, eggs, cheese',
+                             class: 'form-control rounded bg-secondary border-secondary text-white'
+          %>
         <% end%>
       </div>
     <% end %>

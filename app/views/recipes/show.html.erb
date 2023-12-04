@@ -3,7 +3,11 @@
 <div class="container">
   <div class="d-flex my-3">
     <% if @recipe.image %>
-      <%= image_tag(@recipe.image, alt: @recipe.title, class: "img-thumbnail bg-secondary border-0", style: "width: 500px; height:500px; ") %>
+      <%= image_tag(@recipe.image,
+                    alt: @recipe.title,
+                    class: "img-thumbnail bg-secondary border-0",
+                    style: "width: 500px; height:500px; ")
+      %>
     <% end %>
     <div class="mx-5 d-flex  flex-column mb-4">
       <h3 class="text-warning text-center"><%= @recipe.title %> </h3>
