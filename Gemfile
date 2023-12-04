@@ -35,6 +35,7 @@ gem 'stimulus-rails'
 gem 'jbuilder'
 
 # Use Redis adapter to run Action Cable in production
+gem 'rails-controller-testing', '~> 1.0'
 gem 'redis', '~> 4.0'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
