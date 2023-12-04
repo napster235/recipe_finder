@@ -18,6 +18,15 @@ a {
     text-decoration: none !important;
 }
 
+.pagination {
+    align-items: center;
+    justify-content: center;
+
+    .page {
+        margin: 5px 20px
+    }
+}
+
 ::placeholder { /* Most modern browsers support this now. */
     color: white !important;
 }

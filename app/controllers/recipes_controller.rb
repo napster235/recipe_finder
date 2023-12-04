@@ -13,9 +13,9 @@ class RecipesController < ApplicationController
 
   def get_recipes_by_ingredients(query_param)
     if query_param.present?
-      @recipes = Recipe.search_by_ingredients(params[:query]).limit(16)
+      @recipes = Recipe.search_by_ingredients(params[:query]).page(params[:page])
     else
-      Recipe.random_recipes
+      Recipe.order('RANDOM()').page(params[:page])
     end
   end
 end

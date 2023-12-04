@@ -8,6 +8,7 @@ ruby '3.1.2'
 gem 'factory_bot', '~> 6.4'
 gem 'factory_bot_rails', '~> 6.4'
 gem 'faker', '~> 3.2'
+gem 'kaminari', '~> 1.2'
 gem 'rails', '~> 7.0.8'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
