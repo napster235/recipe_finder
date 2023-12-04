@@ -1,0 +1,25 @@
+<div class="text-white d-flex">
+  <div class="fw-bold mx-1">Cook time:</div>
+  <div><%= distance_of_time_in_words(recipe.cook_time * 60) %></div>
+</div>
+
+<div class="text-white d-flex">
+  <div class="fw-bold mx-1">Prep time:</div>
+  <div><%= distance_of_time_in_words(recipe.prep_time * 60) %></div>
+</div>
+
+<div class="text-white d-flex">
+  <div class="fw-bold mx-1">Cuisine:</div>
+  <div> <%= recipe.cuisine.nil? ? recipe.cuisine :  "Unknown" %></div>
+</div>
+
+<div class="text-white d-flex">
+  <div class="fw-bold mx-1">Author:</div>
+  <div> <%= recipe.author %></div>
+</div>
+
+<div class="text-white d-flex">
+  <div class="fw-bold mx-1">Rating:</div>
+  <div> <%= recipe.ratings.floor(1) %> / 5.0</div>
+  <i class="bi bi-star-fill text-warning mx-2"></i>
+</div>
