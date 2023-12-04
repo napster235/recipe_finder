@@ -29,6 +29,8 @@ Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
 Style/Documentation:
   Enabled: false
+Style/NumericLiterals:
+  Enabled: false
 
 # ------------------------------------------------------- Metrics ------------------------------------------------------
 

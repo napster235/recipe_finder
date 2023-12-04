@@ -29,7 +29,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_03_181459) do
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.virtual 'searchable', type: :tsvector,
-                            as: "to_tsvector('english'::regconfig, COALESCE((ingredients)::text, ''::text))", stored: true
+                            as: "to_tsvector('english'::regconfig, COALESCE((ingredients)::text, ''::text))",
+                            stored: true
     t.index ['searchable'], name: 'index_recipes_on_searchable', using: :gin
   end
 
