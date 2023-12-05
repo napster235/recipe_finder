@@ -3,13 +3,19 @@
     <h3><%= link_to 'Recipe finder', recipes_path, class: "text-warning" %></h3>
 
     <% if show_search_bar %>
-      <div class="col-md-4">
-        <%= form_tag(recipes_path, method: :get, class: "d-flex  input-group") do %>
+      <div class="col-md-6 d-flex align-items-center justify-content-between">
+        <%= form_tag(recipes_path, method: :get, class: "input-group d-flex align-items-center") do %>
+          <div class="text-warning fw-bold">Order</div>
+          <%= select_tag 'order',
+                         options_for_select([['Max rating', 'DESC'], ['Min rating', 'ASC'], ], params[:order]),
+                         class: "form-select rounded bg-secondary border-secondary text-white mx-2"
+          %>
           <%= text_field_tag :query,
                              params[:query],
                              placeholder: 'milk, eggs, cheese',
                              class: 'form-control rounded bg-secondary border-secondary text-white'
           %>
+          <%= submit_tag "Search", name: nil, class: 'btn btn-secondary' %>
         <% end%>
       </div>
     <% end %>

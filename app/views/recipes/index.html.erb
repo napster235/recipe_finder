@@ -5,6 +5,7 @@
     <% if @recipes.blank? %>
       <h4>No recipes found</h4>
     <% else %>
+
       <% @recipes.each do |recipe| %>
         <div class="col-md-3 d-flex align-items-center flex-column mb-4">
           <%= link_to(recipe) do %>
