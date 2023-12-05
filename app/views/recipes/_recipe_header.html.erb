@@ -5,7 +5,7 @@
     <% if show_search_bar %>
       <div class="col-md-6 d-flex align-items-center justify-content-between">
         <%= form_tag(recipes_path, method: :get, class: "input-group d-flex align-items-center") do %>
-          <div class="text-warning fw-bold">Order</div>
+          <div class="text-warning fw-bold">Order by</div>
           <%= select_tag 'order',
                          options_for_select([['Max rating', 'DESC'], ['Min rating', 'ASC'], ], params[:order]),
                          class: "form-select rounded bg-secondary border-secondary text-white mx-2"
