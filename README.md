@@ -1,24 +1,25 @@
-# README
+# Recipe finder :bento:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting started
 
-Things you may want to cover:
+In order to use this project locally, you will need to have Ruby and Rails installed on your system.
 
-* Ruby version
+Ruby version used: `3.1.2`
 
-* System dependencies
+Rails version used: `7.0.8`
 
-* Configuration
+Once you have these prerequisites installed, follow these steps:
+1. Clone this repository to your local machine
+2. Navigate to the project directory and run `bundle install`
+3. Run `rails db:migrate` to populate the DB with records
+4. Start the API server by running `rails server`
 
-* Database creation
+## This project has the following features
 
-* Database initialization
+ - search by ingredients
+ - order by ratings of recipes
+ - pagination with 16 records on each page
+ - indexed records
+ - individual view for each recipe
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### The project is deployed on **fly.io** and can be accessed here `recipe-finder99.fly.dev/`
