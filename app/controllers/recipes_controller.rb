@@ -7,6 +7,9 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to recipes_path
+    flash[:alert] = "The recipe with id #{params[:id]} does not exist"
   end
 
   private
