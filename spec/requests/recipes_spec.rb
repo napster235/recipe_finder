@@ -112,5 +112,24 @@ RSpec.describe 'recipes', type: :request do
         expect(response.body).not_to be_nil
       end
     end
+
+    context 'when the recipe id does not exist' do
+      subject { get recipe_path(0) }
+
+      it 'has status code 302 redirect' do
+        subject
+        expect(response.status).to eq(302)
+      end
+
+      it 'redirects to recipes index' do
+        subject
+        expect(response).to redirect_to(recipes_path)
+      end
+
+      it 'has the correct flash notification' do
+        subject
+        expect(flash[:alert]).to eq('The recipe with id 0 does not exist')
+      end
+    end
   end
 end
