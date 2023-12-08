@@ -14,10 +14,12 @@ class RecipesController < ApplicationController
   def get_recipes_by_ingredients(query_param)
     ordered_recipes = Recipe.order(params[:order] == 'ASC' ? 'ratings ASC' : 'ratings DESC')
 
-    if query_param.present?
-      ordered_recipes.search_by_ingredients(params[:query]).page(params[:page])
-    else
-      ordered_recipes.random_recipes.page(params[:page])
-    end
+    recipes = if query_param.present?
+                ordered_recipes.search_by_ingredients(params[:query])
+              else
+                ordered_recipes.random_recipes
+              end
+
+    recipes.page(params[:page])
   end
 end
