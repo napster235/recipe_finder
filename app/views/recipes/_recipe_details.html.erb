@@ -10,7 +10,7 @@
 
 <div class="text-white d-flex">
   <div class="fw-bold mx-1">Cuisine:</div>
-  <div> <%= recipe.cuisine.nil? ? recipe.cuisine :  "Unknown" %></div>
+  <div> <%= recipe.cuisine.blank? ? "Unknown": recipe.cuisine %></div>
 </div>
 
 <div class="text-white d-flex">
