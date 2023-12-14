@@ -4,4 +4,4 @@ directory = File.dirname(__FILE__)
 file_location = File.join(directory, 'recipes-en.json')
 recipe_list = JSON.parse(File.read(file_location))
 
-recipe_list.each { |recipe| Recipe.create(recipe) }
+Recipe.insert_all(recipe_list)
